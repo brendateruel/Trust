@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @ism.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ism.description %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @ism.gender %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @ism.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_ism_path(@ism) %> |
+<%= link_to 'Back', isms_path %>

@@ -1,0 +1,29 @@
+<h1>Listing isms</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Gender</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @isms.each do |ism| %>
+  <tr>
+    <td><%= ism.title %></td>
+    <td><%= ism.description %></td>
+    <td><%= ism.gender %></td>
+    <td><%= ism.category %></td>
+    <td><%= link_to 'Show', ism %></td>
+    <td><%= link_to 'Edit', edit_ism_path(ism) %></td>
+    <td><%= link_to 'Destroy', ism, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ism', new_ism_path %>
