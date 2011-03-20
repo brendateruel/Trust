@@ -17,15 +17,16 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :rows => 4 %>
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= radio_button :post, :gender, :Male %>Male
+    <%= radio_button :post, :gender, :Female %>Female
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_area :category %>
+	<%= select_tag(:category, options_for_select([['Fashion', 'Fashion], ['Food and Drink', 'Food/Drink'], ...])) %>
   </div>
   <div class="actions">
     <%= f.submit %>
