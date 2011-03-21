@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-	<%= select_tag(:category, options_for_select([['Fashion', 'Fashion], ['Food and Drink', 'Food/Drink'], ...])) %>
+	<%= f.text_field :category %>
   </div>
   <div class="actions">
     <%= f.submit %>
