@@ -22,7 +22,7 @@
 	<%= label_tag(:gender_Female, "Woman") %>
   </div>
   <div class="field">
-    <%= select("ism", "category", options_for_select([['Food + Drink', Food and Drink], ['Health', 2], ['Fashion', 3]])) %>
+    <%= select("ism", "category", options_for_select(["Food and Drink", "Health", "Fashion"])) %>
   </div>
   <div class="actions">
     <%= f.submit %>
