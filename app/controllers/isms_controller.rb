@@ -1,4 +1,6 @@
 class IsmsController < ApplicationController
+  require 'isms_helper'
+
   # GET /isms
   # GET /isms.xml
   def index
