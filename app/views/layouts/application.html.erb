@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Never Trust A...</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
 
-<%= yield %>
+<head>
+    <title>Never Trust Someone Who...</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <%= csrf_meta_tag %>
+</head>
+
+<body id="man">
+
+<div id="wrap">
+    <a href="index.html" title="See some more" id="refresh">See some more</a>
+    <ul id="nav">
+        <li>Switch:</li>
+        <li><a href="#" title="Never trust a man..." class="selected">Man</a></li>
+        <li><a href="#" title="Never trust a woman...">Woman</a></li>
+    </ul>
+    <div id="content">
+        <h1>Never Trust a Man Who Shops at Express.</h1>
+        <div id="submit-box">
+            <a href="#" title="Submit your own" id="add">Submit your own</a>
+            <h2>Submit your own.</h2>
+            <p>Maybe we'll post it. Maybe we won't.</p>
+        </div>
+        <form id="submit" method="put">
+            <fieldset>
+                <ul>
+                    <li id="check-mark">
+                        <label for="gender">Gender:</label>
+                        <ul>
+                            <li><input type="radio" name="gender" value="man" />Man</li>
+                            <li><input type="radio" name="gender" value="woman" />Woman</li>
+                        </ul>
+                    </li>
+                    <li id="check-mark">
+                        <label for="category">Category:</label>
+                        <ul>
+                            <li><input type="radio" name="category" value="fashion" />Fashion</li>
+                            <li><input type="radio" name="category" value="grooming" />Grooming</li>
+                            <li><input type="radio" name="category" value="music" />Music</li>
+                            <li><input type="radio" name="category" value="sports" />Sports</li>
+                            <li><input type="radio" name="category" value="food" />Food</li>
+                            <li><input type="radio" name="category" value="miscellaneous" />Miscellaneous</li>
+                        </ul>
+                    </li>
+                    <li id="check-mark">
+                        <input type="text" />
+                    </li>
+                    <li id="alert-wrap">
+                        <p id="alert-message">Not yet! Make sure you see all 3 check marks before you hit "submit."</p>
+                    </li>
+                    <li>
+                        <input type="button" value="Submit" />
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#submit").hide();
+	$("#submit-box a").click(function(){
+	    $("#submit-box a").toggleClass("toggle");
+	    $("#submit").slideToggle("fast");
+		return false;
+	});
+	
+	$("input[type=text]").each(function() {
+        var search = 'Never Trust Someone Who...';
+        var empty = '';
+        $(this).attr('value', search);
+        $(this).focus(function() {
+            if (this.value == search) {
+                this.value = empty;
+            }
+        });
+        $(this).blur(function() {
+            if (this.value == empty) {
+                this.value = search;
+            }
+        });
+    });
+
+});
+</script>
 
 </body>
 </html>
