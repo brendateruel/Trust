@@ -1,5 +1,35 @@
-<h1>New ism</h1>
+<div id="submit-box">
+	<a href="#" title="Submit your own" id="add">Submit your own</a>
+	<h2>Submit your own.</h2>
+	<p>Maybe we'll post it. Maybe we won't.</p>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', isms_path %>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#submit").hide();
+	$("#submit-box a").click(function(){
+	    $("#submit-box a").toggleClass("toggle");
+	    $("#submit").slideToggle("fast");
+		return false;
+	});
+	
+	$("input[type=text]").each(function() {
+        var search = 'Never Trust Someone Who...';
+        var empty = '';
+        $(this).attr('value', search);
+        $(this).focus(function() {
+            if (this.value == search) {
+                this.value = empty;
+            }
+        });
+        $(this).blur(function() {
+            if (this.value == empty) {
+                this.value = search;
+            }
+        });
+    });
+
+});
+</script>

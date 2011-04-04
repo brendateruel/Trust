@@ -1,7 +1,9 @@
 Trust::Application.routes.draw do
   resources :isms
   
-  root :to => 'isms#index'
+  root :to => 'isms#new'
+  
+  match "/index.html" => redirect("/")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
