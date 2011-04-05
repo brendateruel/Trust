@@ -140,7 +140,7 @@ input[type="text"] {
     width: 300px;
     }
 
-input[type="button"] {
+input[type="submit"] {
     padding: 12px;
     background-color: #6dcf19;
     color: #dfef00;
@@ -148,5 +148,5 @@ input[type="button"] {
     cursor: pointer;
     }
 
-input[type="button"]:hover { color: #fff; }  
+input[type="submit"]:hover { color: #fff; }  
     
