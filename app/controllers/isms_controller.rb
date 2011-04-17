@@ -27,6 +27,7 @@ class IsmsController < ApplicationController
   # GET /isms/new.xml
   def new
     @ism = Ism.new
+	@pulls = Ism.all
 
     respond_to do |format|
       format.html # new.html.erb
