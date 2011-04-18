@@ -28,6 +28,7 @@ class IsmsController < ApplicationController
   def new
     @ism = Ism.new
 	@pulls = Ism.all
+	@fetch = Ism.random
 
     respond_to do |format|
       format.html # new.html.erb
