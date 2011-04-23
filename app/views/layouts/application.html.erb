@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Never Trust A...</title>
+  <title>Never Trust A <%= @title %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<body id="man">
+<body id="<%= @ism.man? ? "men" : "women" %>">
 
 <div id="wrap">
-    <a href="/index.html" title="See some more" id="refresh">See some more</a>
-    <ul id="nav">
-        <li>Switch:</li>
-        <li><a href="#" title="Never trust a man..." class="selected">Man</a></li>
-        <li><a href="#" title="Never trust a woman...">Woman</a></li>
-    </ul>
+    <%= render 'layouts/header' %>
     <div id="content">
         <%= yield %>
 	</div>

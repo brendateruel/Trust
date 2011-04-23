@@ -6,7 +6,11 @@
 	color: #6dcf19;
 	}
 
-html, body { background-color: #dfef00; }
+body#woman * { color: #c40a98; }
+
+body { background-color: #dfef00; }
+
+body#woman { background-color: #ff77ae; }
 
 ul { list-style: none; }
 
@@ -14,7 +18,29 @@ ul { list-style: none; }
 .medium-green { color: #cde800; }
 .dark-green { color: #6dcf19; }
 
+.light-pink { color: #ff77ae; }
+.medium-pink { color: #ff62ae; }
+.dark-pink { color: #c40a98; }
+
 a { text-decoration: none; }
+
+td a { border-bottom: 1px solid #cde800; }
+td a:hover { border-bottom: 1px solid #6dcf19; }
+
+#woman td a { border-bottom: 1px solid #ff62ae; }
+#woman td a:hover { border-bottom: 1px solid #c40a98; }
+
+table { text-align: left; }
+
+table tr th, table tr td {
+    padding: 5px 20px 5px 8px;
+    border-bottom: 2px solid #cde800;
+    }
+
+#woman table tr th, #woman table tr td {
+    padding: 5px 20px 5px 8px;
+    border-bottom: 2px solid #ff62ae;
+    }
 
 h1 {
     font-size: 80px;
@@ -48,8 +74,12 @@ h1 {
     text-indent: -999em;
     }
 
+#woman #refresh { background: transparent url('../images/w-refresh.gif') no-repeat 0 0; }
+
 #refresh:hover { background: transparent url('../images/refresh.gif') no-repeat 0 -42px; }
-   
+  
+#woman #refresh:hover { background: transparent url('../images/w-refresh.gif') no-repeat 0 -42px; }
+
 #nav { position: absolute; top: 46px; right: 40px; }
 
 #nav li { display: inline; margin-left: 5px; }
@@ -57,6 +87,11 @@ h1 {
 #nav li a:hover { background-color: #6dcf19; color: #dfef00; }
 #nav li a.selected { background-color: #6dcf19; color: #dfef00; }
 #nav li a.selected:hover { color: #fff; }
+
+#woman #nav li a { padding: 12px; background-color: #ff62ae; }
+#woman #nav li a:hover { background-color: #c40a98; color: #ff77ae; }
+#woman #nav li a.selected { background-color: #c40a98; color: #ff77ae; }
+#woman #nav li a.selected:hover { color: #fff; }
 
 #submit-box p { font-weight: normal; }
 
@@ -68,6 +103,8 @@ h1 {
     background-color: #cde800;
     padding: 20px;
     }
+
+#woman #submit-box { background-color: #ff62ae; }
 
 #received {
     position: absolute;
@@ -85,7 +122,11 @@ h1 {
     text-indent: -999em;
     }
 
+#woman #add { background: transparent url('../images/w-add.gif') no-repeat 0 0; }
+
 #add:hover { background: transparent url('../images/add.gif') no-repeat 0 -30px; }
+
+#woman #add:hover { background: transparent url('../images/w-add.gif') no-repeat 0 -30px; }
 
 #add.toggle {
     position: absolute;
@@ -96,8 +137,12 @@ h1 {
     background: transparent url('../images/add.gif') no-repeat 0 -60px;
     text-indent: -999em;
     }
-    
+
+#woman #add.toggle { background: transparent url('../images/w-add.gif') no-repeat 0 -60px; }
+   
 #add.toggle:hover { background: transparent url('../images/add.gif') no-repeat 0 -67px; }
+
+#woman #add.toggle:hover { background: transparent url('../images/w-add.gif') no-repeat 0 -67px; }
 
 fieldset {
     width: 400px;
@@ -107,17 +152,23 @@ fieldset {
     padding: 0 20px 10px;
     }
 
+#woman fieldset { background-color: #ff62ae; }
+
 fieldset ul li { margin-bottom: 10px; }
 fieldset ul li ul { margin-left: 120px; }
 fieldset ul li ul li { margin-bottom: 0; }
 
-fieldset ul li#check-mark {
+fieldset ul li.check-mark {
     background-image: url('../images/check-mark-off.gif');
     background-repeat: no-repeat;
     background-position: 371px 6px;
     }
 
+#woman fieldset ul li.check-mark { background-image: url('../images/w-check-mark-off.gif'); }
+
 .check-toggle { background-image: url('../images/check-mark-on.gif'); }
+
+#woman .check-toggle { background-image: url('../images/w-check-mark-on.gif'); }
 
 label { float: left; width: 120px; }
 
@@ -129,7 +180,7 @@ select { border: 0; }
 
 input { outline: none; }
 
-input[type="radio"] { margin-right: 4px; }
+input[type="radio"] { margin-right: 6px; }
     
 input[type="text"] {
     background-color: #dfef00;
@@ -140,6 +191,8 @@ input[type="text"] {
     width: 300px;
     }
 
+#woman input[type="text"] { background-color: #ff77ae; color: #c40a98; }
+
 input[type="submit"] {
     padding: 12px;
     background-color: #6dcf19;
@@ -147,6 +200,8 @@ input[type="submit"] {
     border: 0;
     cursor: pointer;
     }
+
+#woman input[type="submit"] { background-color: #c40a98; color: #ff77ae; }
 
 input[type="submit"]:hover { color: #fff; }  
     

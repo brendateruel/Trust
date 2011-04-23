@@ -1,0 +1,45 @@
+<%= form_for(@ism) do |f| %>
+  <% if @ism.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ism.errors.count, "error") %> prohibited this ism from being saved:</h2>
+
+      <ul>
+      <% @ism.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+            <fieldset id="submit">
+                <ul>
+                    <li class="check-mark">
+                        <label for="gender">Gender:</label>
+                        <ul>
+                            <li><%= radio_button("ism", "gender", "Man") %><%= "Man" %></li>
+                            <li><%= radio_button("ism", "gender", "Woman") %><%= "Woman" %></li>
+                        </ul>
+                    </li>
+                    <li class="check-mark">
+                        <label for="category">Category:</label>
+                        <ul>
+                            <li><%= radio_button("ism", "category", "Music") %><%= "Music" %></li>
+                            <li><%= radio_button("ism", "category", "Sports") %><%= "Sports" %></li>
+                            <li><%= radio_button("ism", "category", "Food & Drink") %><%= "Food & Drink" %></li>
+                            <li><%= radio_button("ism", "category", "Health") %><%= "Health" %></li>
+                            <li><%= radio_button("ism", "category", "Fashion") %><%= "Fashion" %></li>
+                            <li><%= radio_button("ism", "category", "Miscellaneous") %><%= "Miscellaneous" %></li>
+                        </ul>
+                    </li>
+                    <li class="check-mark">
+                        <%= f.text_field :description %>
+                    </li>
+                    <li id="alert-wrap">
+                        <p id="alert-message">Not yet! Make sure you see all 3 check marks before you hit "submit."</p>
+                    </li>
+                    <li>
+                        <%= f.submit "Submit" %>
+                    </li>
+                </ul>
+            </fieldset>
+<% end %>

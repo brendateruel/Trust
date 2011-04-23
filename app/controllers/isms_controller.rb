@@ -84,4 +84,25 @@ class IsmsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def man
+    @title = "Man Who..."
+    @ism = Ism.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to(isms_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def woman
+    @title = "Woman Who..."
+    @ism = Ism.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to(isms_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
 end

@@ -1,4 +1,4 @@
-<h1>Never Trust a Man Who <%= render :partial => "pull", :locals => { :pull => @pull } %></h1>
+<h1>Never Trust a Man Who <%= render :partial => "layouts/pull", :locals => { :pull => @pull } %></h1>
 
 <div id="submit-box">
 	<a href="#" title="Submit your own" id="add">Submit your own</a>
@@ -6,7 +6,7 @@
 	<p>Maybe we'll post it. Maybe we won't.</p>
 </div>
 
-<%= render 'form' %>
+<%= render 'layouts/form' %>
 
 <script type="text/javascript">
 $(document).ready(function(){

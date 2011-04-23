@@ -8,5 +8,13 @@ class Ism < ActiveRecord::Base
 	ids = connection.select_all("SELECT id FROM isms")
 	find(ids[rand(ids.length)]["id"].to_i) unless ids.blank?
   end
-  	
+  
+  def man?
+ÊÊ Êgender == "man"
+ÊÊend
+  
+  def woman?
+ÊÊ Êgender == "woman"
+ÊÊend
+
 end

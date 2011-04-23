@@ -3,7 +3,10 @@ Trust::Application.routes.draw do
   
   root :to => 'isms#new'
   
-  match "/index.html" => redirect("/")
+  match '/edit', :to => 'isms#edit'
+  match '/index', :to => 'isms#index'
+  match '/man', :to => 'isms#man'
+  match '/woman', :to => 'isms#woman'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
