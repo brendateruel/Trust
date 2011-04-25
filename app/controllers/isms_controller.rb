@@ -26,9 +26,9 @@ class IsmsController < ApplicationController
   # GET /isms/new
   # GET /isms/new.xml
   def new
-    @ism = Ism.new
-	@pulls = Ism.all
-	@fetch = Ism.random
+    @title = "Man Who..."
+    @ism = Ism.new(:gender => params[:gender] || "man")
+    @fetch = Ism.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -84,25 +84,5 @@ class IsmsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  def man
-    @title = "Man Who..."
-    @ism = Ism.find(params[:id])
 
-    respond_to do |format|
-      format.html { redirect_to(isms_url) }
-      format.xml  { head :ok }
-    end
-  end
-  
-  def woman
-    @title = "Woman Who..."
-    @ism = Ism.find(params[:id])
-
-    respond_to do |format|
-      format.html { redirect_to(isms_url) }
-      format.xml  { head :ok }
-    end
-  end
-  
 end

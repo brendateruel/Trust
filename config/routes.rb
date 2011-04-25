@@ -5,8 +5,8 @@ Trust::Application.routes.draw do
   
   match '/edit', :to => 'isms#edit'
   match '/index', :to => 'isms#index'
-  match '/man', :to => 'isms#man'
-  match '/woman', :to => 'isms#woman'
+  match '/man', :to =>'isms#new', :defaults => {:gender => 'man'}
+  match '/woman', :to =>'isms#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,16 +5,16 @@ class Ism < ActiveRecord::Base
   validates :description, :uniqueness => true
   
   def self.random
-	ids = connection.select_all("SELECT id FROM isms")
-	find(ids[rand(ids.length)]["id"].to_i) unless ids.blank?
+    ids = connection.select_all("SELECT id FROM isms")
+    find(ids[rand(ids.length)]["id"].to_i) unless ids.blank?
   end
   
   def man?
-    gender == "man"
-  end
+    gender == "man"
+  end
   
   def woman?
-    gender == "woman"
-  end
+    gender == "woman"
+  end
 
 end
