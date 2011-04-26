@@ -28,8 +28,8 @@ class IsmsController < ApplicationController
   def new
     @title = "Man Who..."
     @ism = Ism.new(:gender => params[:gender] || "man")
-    @fetch = Ism.all
-
+	@fetch = Ism.random(:conditions => ['isms.gender=?', 'man'])
+	
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @ism }
