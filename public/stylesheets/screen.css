@@ -85,13 +85,15 @@ h1 {
 #nav li { display: inline; margin-left: 5px; }
 #nav li a { padding: 12px; background-color: #cde800; }
 #nav li a:hover { background-color: #6dcf19; color: #dfef00; }
-#nav li a.selected { background-color: #6dcf19; color: #dfef00; }
-#nav li a.selected:hover { color: #fff; }
+#nav li a.man { background-color: #6dcf19; color: #dfef00; }
+#nav li a.man:hover { color: #fff; }
 
 #woman #nav li a { padding: 12px; background-color: #ff62ae; }
 #woman #nav li a:hover { background-color: #c40a98; color: #ff77ae; }
-#woman #nav li a.selected { background-color: #c40a98; color: #ff77ae; }
-#woman #nav li a.selected:hover { color: #fff; }
+#woman #nav li a.man { color: #c40a98; }
+#woman #nav li a.man:hover { color: #ff77ae; }
+#woman #nav li a.woman { background-color: #c40a98; color: #ff77ae; }
+#woman #nav li a.woman:hover { color: #fff; }
 
 #submit-box p { font-weight: normal; }
 

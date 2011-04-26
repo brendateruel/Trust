@@ -26,9 +26,14 @@ class IsmsController < ApplicationController
   # GET /isms/new
   # GET /isms/new.xml
   def new
-    @title = "Man Who..."
-    @ism = Ism.new(:gender => params[:gender] || "man")
-    @fetch = Ism.all
+    
+    @ism = Ism.new
+    if params[:man]
+        @gender = "man"
+    else
+        @gender = "woman"
+    end
+    @fetch = Ism.random
 
     respond_to do |format|
       format.html # new.html.erb
