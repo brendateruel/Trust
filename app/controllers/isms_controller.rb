@@ -1,6 +1,8 @@
 class IsmsController < ApplicationController
   require 'isms_helper'
-
+  
+  before_filter :set_gender
+  
   # GET /isms
   # GET /isms.xml
   def index
@@ -28,12 +30,7 @@ class IsmsController < ApplicationController
   def new
     
     @ism = Ism.new
-    if params[:man]
-        @gender = "man"
-    else
-        @gender = "woman"
-    end
-    @fetch = Ism.random
+    @fetch = Ism.random(:gender => @gender)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -53,10 +50,13 @@ class IsmsController < ApplicationController
 
     respond_to do |format|
       if @ism.save
-        format.html { redirect_to(@ism, :notice => 'Ism was successfully created.') }
+        format.html { redirect_to(success_path(:woman => @ism.woman?)) }
         format.xml  { render :xml => @ism, :status => :created, :location => @ism }
       else
-        format.html { render :action => "new" }
+        format.html { 
+            @fetch = Ism.random
+            render :action => "new" 
+        }
         format.xml  { render :xml => @ism.errors, :status => :unprocessable_entity }
       end
     end
@@ -89,5 +89,14 @@ class IsmsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def success
+  
+  end
 
+  private
+  
+  def set_gender
+    @gender = params[:woman] ? Ism::WOMAN : Ism::MAN
+  end
 end

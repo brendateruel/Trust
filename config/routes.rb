@@ -1,12 +1,13 @@
 Trust::Application.routes.draw do
   resources :isms
   
-  root :to => 'isms#new', :defaults => {:man => true}
+  root :to => 'isms#new'
   
   match '/edit', :to => 'isms#edit'
   match '/index', :to => 'isms#index'
-  match '/man', :to =>'isms#new', :defaults => {:man => true}
-  match '/woman', :to =>'isms#new', :defaults => {:man => false}
+  match '/man', :to =>'isms#new'
+  match '/woman', :to =>'isms#new', :defaults => {:woman => true}
+  match '/success', :to => "isms#success", :as => :success
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
