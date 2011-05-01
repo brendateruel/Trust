@@ -49,6 +49,10 @@ h1 {
     margin-left: -4px;
     }
 
+h1, h2, dt { font-weight: bold; }
+
+#notice h2 { color: #006428;}
+
 #wrap {
 	position: relative;
 	width: auto;
@@ -95,18 +99,20 @@ h1 {
 #woman #nav li a.woman { background-color: #c40a98; color: #ff77ae; }
 #woman #nav li a.woman:hover { color: #fff; }
 
-#submit-box p { font-weight: normal; }
+#submit-box p, #notice p { font-weight: normal; }
 
-#submit-box {
+#submit-box, #notice {
     position: relative;
     width: 400px;
     height: auto;
     border: none;
     background-color: #cde800;
     padding: 20px;
+    border-bottom: 1px solid #dfef00;
     }
 
-#woman #submit-box { background-color: #ff62ae; }
+#woman #submit-box { background-color: #ff62ae; border-bottom: 1px solid #ff77ae; }
+
 
 #received {
     position: absolute;
@@ -151,7 +157,7 @@ fieldset {
     height: auto;
     border: none;
     background-color: #cde800;
-    padding: 0 20px 10px;
+    padding: 20px 20px 10px;
     }
 
 #woman fieldset { background-color: #ff62ae; }
@@ -160,17 +166,19 @@ fieldset ul li { margin-bottom: 10px; }
 fieldset ul li ul { margin-left: 120px; }
 fieldset ul li ul li { margin-bottom: 0; }
 
-fieldset ul li.check-mark {
+/*
+fieldset ul li.check-mark-on {
     background-image: url('../images/check-mark-off.gif');
     background-repeat: no-repeat;
     background-position: 371px 6px;
     }
 
-#woman fieldset ul li.check-mark { background-image: url('../images/w-check-mark-off.gif'); }
+#woman fieldset ul li.check-mark-off { background-image: url('../images/w-check-mark-off.gif'); }
 
 .check-toggle { background-image: url('../images/check-mark-on.gif'); }
 
 #woman .check-toggle { background-image: url('../images/w-check-mark-on.gif'); }
+*/
 
 label { float: left; width: 120px; }
 
@@ -180,20 +188,21 @@ select { border: 0; }
 
 #alert-wrap { display: none; }
 
-input { outline: none; }
+input, textarea { outline: none; }
 
 input[type="radio"] { margin-right: 6px; }
     
-input[type="text"] {
+textarea {
     background-color: #dfef00;
     color: #6dcf19;
     font-style: italic;
     border: none;
     padding: 12px;
     width: 300px;
+    overflow: auto;
     }
 
-#woman input[type="text"] { background-color: #ff77ae; color: #c40a98; }
+#woman textarea { background-color: #ff77ae; color: #c40a98; }
 
 input[type="submit"] {
     padding: 12px;
@@ -207,3 +216,33 @@ input[type="submit"] {
 
 input[type="submit"]:hover { color: #fff; }  
     
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+    }
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    }
+
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+    }
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: square;
+    }

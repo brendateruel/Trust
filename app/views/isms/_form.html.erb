@@ -12,16 +12,16 @@
                     <li class="check-mark">
                         <label for="category">Category:</label>
                         <ul>
-                            <li><%= radio_button("ism", "category", "Music") %><%= "Music" %></li>
-                            <li><%= radio_button("ism", "category", "Sports") %><%= "Sports" %></li>
-                            <li><%= radio_button("ism", "category", "Food & Drink") %><%= "Food & Drink" %></li>
-                            <li><%= radio_button("ism", "category", "Health") %><%= "Health" %></li>
-                            <li><%= radio_button("ism", "category", "Fashion") %><%= "Fashion" %></li>
-                            <li><%= radio_button("ism", "category", "Miscellaneous") %><%= "Miscellaneous" %></li>
+                            <li><%= radio_button("ism", "category", "Music") %>Music</li>
+                            <li><%= radio_button("ism", "category", "Sports") %>Sports</li>
+                            <li><%= radio_button("ism", "category", "Food & Drink") %>Food & Drink</li>
+                            <li><%= radio_button("ism", "category", "Health") %>Health</li>
+                            <li><%= radio_button("ism", "category", "Fashion") %>Fashion</li>
+                            <li><%= radio_button("ism", "category", "Miscellaneous") %>Miscellaneous</li>
                         </ul>
                     </li>
                     <li class="check-mark">
-                        <%= f.text_field :description %>
+                        <%= f.text_area :description, :cols => "4", :rows => "4" %>
                     </li>
                     <li id="alert-wrap">
                         <p id="alert-message">Not yet! Make sure you see all 3 check marks before you hit "submit."</p>

@@ -17,8 +17,8 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	$("input[type=text]").each(function() {
-        var search = 'Never Trust Someone Who...';
+	$("textarea").each(function() {
+        var search = 'Never Trust A <%= @gender.capitalize %> Who...';
         var empty = '';
         $(this).attr('value', search);
         $(this).focus(function() {
