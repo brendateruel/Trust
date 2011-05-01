@@ -7,7 +7,6 @@
     <th>Category</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @isms.each do |ism| %>
@@ -15,7 +14,6 @@
     <td><%= ism.description %></td>
     <td><%= ism.gender %></td>
     <td><%= ism.category %></td>
-    <td><%= link_to 'Show', ism %></td>
     <td><%= link_to 'Edit', edit_ism_path(ism) %></td>
     <td><%= link_to 'Destroy', ism, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

@@ -1,4 +1,4 @@
-<h1>Never Trust a Man Who <%= render 'layouts/pull' %></h1>
+<h1>Never Trust a <%= @gender.capitalize %> Who <%= @fetch.description %></h1>
 
 <div id="submit-box">
 	<a href="#" title="Submit your own" id="add">Submit your own</a>
@@ -6,7 +6,7 @@
 	<p>Maybe we'll post it. Maybe we won't.</p>
 </div>
 
-<%= render 'layouts/form' %>
+<%= render 'form' %>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -17,8 +17,8 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	$("input[type=text]").each(function() {
-        var search = 'Never Trust Someone Who...';
+	$("textarea").each(function() {
+        var search = 'Never Trust A <%= @gender.capitalize %> Who...';
         var empty = '';
         $(this).attr('value', search);
         $(this).focus(function() {
