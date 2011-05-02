@@ -99,7 +99,7 @@ h1, h2, dt { font-weight: bold; }
 #woman #nav li a.woman { background-color: #c40a98; color: #ff77ae; }
 #woman #nav li a.woman:hover { color: #fff; }
 
-#submit-box p, #notice p { font-weight: normal; }
+p { font-weight: normal; }
 
 #submit-box, #notice {
     position: relative;
@@ -112,7 +112,6 @@ h1, h2, dt { font-weight: bold; }
     }
 
 #woman #submit-box { background-color: #ff62ae; border-bottom: 1px solid #ff77ae; }
-
 
 #received {
     position: absolute;
@@ -166,27 +165,50 @@ fieldset ul li { margin-bottom: 10px; }
 fieldset ul li ul { margin-left: 120px; }
 fieldset ul li ul li { margin-bottom: 0; }
 
-/*
-fieldset ul li.check-mark-on {
-    background-image: url('../images/check-mark-off.gif');
+li.status.yes {
+    background-image: url('../images/validate-yes.gif');
     background-repeat: no-repeat;
-    background-position: 371px 6px;
+    background-position: 371px 0;
     }
 
-#woman fieldset ul li.check-mark-off { background-image: url('../images/w-check-mark-off.gif'); }
+#woman li.status.yes { background-image: url('../images/w-validate-yes.gif'); }
 
-.check-toggle { background-image: url('../images/check-mark-on.gif'); }
+li.status.no {
+    background-image: url('../images/validate-no.gif');
+    background-repeat: no-repeat;
+    background-position: 371px 0;
+    }
+    
+#woman li.status.no { background-image: url('../images/w-validate-no.gif'); }
 
-#woman .check-toggle { background-image: url('../images/w-check-mark-on.gif'); }
-*/
+ul li.warning.yes,
+ul li.warning.no,
+ul li.error {
+    font-size: 13px;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 12px;
+    }
+
+#woman ul li.warning.yes,
+#woman ul li.warning.no,
+#woman ul li.error {
+    font-size: 13px;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 12px;
+    }
+
+ul li.warning.no,
+ul li.error,
+#woman li.warning.no,
+#woman li.error { color: #ec1c24; }
 
 label { float: left; width: 120px; }
 
+#textarea-label { width: 300px; margin-bottom: 2px; }
+
 select { border: 0; }
-
-#alert-message { font-size: 12px; line-height: 12px; color: #fff; }
-
-#alert-wrap { display: none; }
 
 input, textarea { outline: none; }
 
@@ -200,6 +222,7 @@ textarea {
     padding: 12px;
     width: 300px;
     overflow: auto;
+    margin-bottom: 0;
     }
 
 #woman textarea { background-color: #ff77ae; color: #c40a98; }
@@ -214,7 +237,9 @@ input[type="submit"] {
 
 #woman input[type="submit"] { background-color: #c40a98; color: #ff77ae; }
 
-input[type="submit"]:hover { color: #fff; }  
+input[type="submit"]:hover { color: #fff; }
+
+#woman input[type="submit"]:hover { color: #fff; }
     
 .field_with_errors {
     padding: 2px;

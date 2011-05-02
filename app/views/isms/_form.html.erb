@@ -2,14 +2,15 @@
 
             <fieldset id="submit">
                 <ul>
-                    <li class="check-mark">
+                    <li class="status">
                         <label for="gender">Gender:</label>
                         <ul>
                             <li><%= radio_button("ism", "gender", Ism::MAN) %>Man</li>
                             <li><%= radio_button("ism", "gender", Ism::WOMAN) %>Woman</li>
                         </ul>
                     </li>
-                    <li class="check-mark">
+                    <li class="error"></li>
+                    <li class="status">
                         <label for="category">Category:</label>
                         <ul>
                             <li><%= radio_button("ism", "category", "Music") %>Music</li>
@@ -20,14 +21,15 @@
                             <li><%= radio_button("ism", "category", "Miscellaneous") %>Miscellaneous</li>
                         </ul>
                     </li>
-                    <li class="check-mark">
+                    <li class="error"></li>
+                    <li class="status">
+                        <label for="description" id="textarea-label">Never Trust a <%= @gender.capitalize %> Who...</label>
                         <%= f.text_area :description, :cols => "4", :rows => "4" %>
                     </li>
-                    <li id="alert-wrap">
-                        <p id="alert-message">Not yet! Make sure you see all 3 check marks before you hit "submit."</p>
-                    </li>
+                    <li class="error"></li>
+                    <li class="warning yes"></li>
                     <li>
-                        <%= f.submit "Submit" %>
+                        <%= f.submit "Submit", :name => "submit" %>
                     </li>
                 </ul>
             </fieldset>
